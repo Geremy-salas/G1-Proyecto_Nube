@@ -121,13 +121,21 @@
           </div>
           <div class="card-body">
             {% if successful_upload %}
-            <p class="success">¡La imagen se cargó con éxito!</p>
-            <a href="/upload" class="button"><i class="fas fa-arrow-left"></i> Cargar otra imagen</a>
+            <div class="alert alert-success" role="alert">
+              ¡La imagen se cargó con éxito!
+            </div>
+            <a href="/upload" class="btn btn-primary">
+              <i class="fas fa-arrow-left"></i> Cargar otra imagen
+            </a>
             {% else %}
             <form method="POST" action="/upload" enctype="multipart/form-data">
-              <label for="picture">Selecciona una imagen:</label>
-              <input type="file" name="picture" id="picture" accept="image/*">
-              <button type="submit"><i class="fas fa-upload"></i> Cargar</button>
+              <div class="form-group">
+                <label for="picture">Selecciona una imagen:</label>
+                <input type="file" name="picture" id="picture" accept="image/*" class="form-control">
+              </div>
+              <button type="submit" class="btn btn-success">
+                <i class="fas fa-upload"></i> Cargar
+              </button>
             </form>
             {% endif %}
           </div>
@@ -136,7 +144,7 @@
     </section>
   </div>
 
-  <!-- Footer -->
+
   <footer class="main-footer">
     <strong>&copy; 2025 Phishing Detection System.</strong> All rights reserved.
     <div class="float-right d-none d-sm-inline-block">

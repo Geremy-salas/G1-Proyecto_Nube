@@ -124,21 +124,25 @@
             <h2>Búsqueda</h2>
 
             <form method="get" action="/search">
-              <label for="q">Escribe un término</label>
-              <input type="text" name="q">
-              <button type="submit">Cargar</button>
+              <div class="form-group">
+                <label for="q">Escribe un término</label>
+                <input type="text" name="q" id="q" class="form-control" placeholder="Ejemplo: 'Correo'">
+              </div>
+              <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i> Buscar</button>
             </form>
 
             {% if query %}
             {% if results %}
-            <h3>Resultados para {{query}}</h3>
-
-            {% for image_link in results %}
-            <img src="{{image_link}}" />
-            {% endfor %}
-
+            <h3 class="mt-4">Resultados para "{{ query }}"</h3>
+            <div class="row">
+              {% for image_link in results %}
+              <div class="col-md-4 mb-3">
+                <img src="{{ image_link }}" class="img-fluid" alt="Imagen encontrada">
+              </div>
+              {% endfor %}
+            </div>
             {% else %}
-            <h3>No existieron resultados para {{query}}</h3>
+            <h3>No se encontraron resultados para "{{ query }}"</h3>
             {% endif %}
             {% endif %}
             {% endblock %}
