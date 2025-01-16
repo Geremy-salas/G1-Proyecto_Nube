@@ -120,6 +120,7 @@
             <h3 class="card-title">Busca imágenes por palabra clave</h3>
           </div>
           <div class="card-body">
+            {% extends "layout.html" %}
             {% block content %}
             <h2>Búsqueda</h2>
 
@@ -133,7 +134,7 @@
 
             {% if query %}
             {% if results %}
-            <h3 class="mt-4">Resultados para "{{ query }}"</h3>
+            <h3 class="mt-4">Resultados para "{{query}}"</h3>
             <div class="row">
               {% for image_link in results %}
               <div class="col-md-4 mb-3">
@@ -142,7 +143,7 @@
               {% endfor %}
             </div>
             {% else %}
-            <h3>No se encontraron resultados para "{{ query }}"</h3>
+            <h3>No se encontraron resultados para "{{query}}"</h3>
             {% endif %}
             {% endif %}
             {% endblock %}

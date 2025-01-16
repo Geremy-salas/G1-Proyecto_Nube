@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,6 +15,7 @@
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="../static/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
 </head>
+
 <body class="hold-transition sidebar-mini layout-fixed" data-panel-auto-height-mode="height">
 <div class="wrapper">
 
@@ -59,7 +61,8 @@
     <a href="#" class="brand-link">
       <img src="../static/dist/img/logo-pagina.jpg" alt="Phishing Detection Logo" class="brand-image img-circle elevation-3">
       <span style="font-weight: bold; display: block; width: 200px; white-space: normal; overflow-wrap: break-word;">
-        Phishing Detection</span>
+                    Phishing Detection
+                </span>
     </a>
 
     <div class="sidebar">
@@ -120,6 +123,9 @@
             <h3 class="card-title">Sube tus imágenes</h3>
           </div>
           <div class="card-body">
+            {% extends "layout.html" %}
+
+            {% block content %}
             {% if successful_upload %}
             <div class="alert alert-success" role="alert">
               ¡La imagen se cargó con éxito!
@@ -138,12 +144,12 @@
               </button>
             </form>
             {% endif %}
+            {% endblock %}
           </div>
         </div>
       </div>
     </section>
   </div>
-
 
   <footer class="main-footer">
     <strong>&copy; 2025 Phishing Detection System.</strong> All rights reserved.
@@ -159,4 +165,5 @@
 <script src="../static/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <script src="../static/dist/js/adminlte.js"></script>
 </body>
+
 </html>

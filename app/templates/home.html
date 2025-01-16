@@ -113,6 +113,9 @@
       </div>
     </section>
 
+    {% extends "layout.html" %}
+
+    {% block content %}
     <section class="content">
       <div class="container-fluid">
         <div class="card">
@@ -120,6 +123,7 @@
             <h3 class="card-title">Guía rápida</h3>
           </div>
           <div class="card-body">
+            <h2>Instrucciones</h2>
             <ol>
               <li>
                 <strong>Carga varias imágenes:</strong> Haz clic en
@@ -134,6 +138,7 @@
         </div>
       </div>
     </section>
+    {% endblock %}
   </div>
 
   <!-- Footer -->
